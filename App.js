@@ -1,12 +1,13 @@
+import { Amplify } from 'aws-amplify';
 import { StatusBar } from 'expo-status-bar';
+import { withAuthenticator } from '@aws-amplify/ui-react-native';
 import { StyleSheet, View } from 'react-native';
 import Navigator from './src/navigation';
-import { Amplify } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
 
 Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
       <Navigator />
@@ -23,3 +24,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default withAuthenticator(App);
