@@ -74,7 +74,7 @@ type EagerUser = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly nam: string;
+  readonly name: string;
   readonly status?: string | null;
   readonly image?: string | null;
   readonly ChatRooms?: (UserChatRoom | null)[] | null;
@@ -89,7 +89,7 @@ type LazyUser = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly nam: string;
+  readonly name: string;
   readonly status?: string | null;
   readonly image?: string | null;
   readonly ChatRooms: AsyncCollection<UserChatRoom>;
